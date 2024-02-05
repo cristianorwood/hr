@@ -1,5 +1,6 @@
 # HR Project - SQL intern Psyliq
 
+This is repository includes my SQL queries for this case study.  Please refer to my [project](cristianorwood.com) for more details on this.
 
 1. Retrieve the total number of employees in the dataset.
 ``` SQL
