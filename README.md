@@ -99,9 +99,11 @@ WHERE survey.EnvironmentSatisfaction IN (0, 4);
 ```
 16. Find the employees who have the same JobRole and MaritalStatus. 
 ``` SQL
-SELECT hr.JobRole, hr.MaritalStatus
-FROM hr
-Group by JobRole, MaritalStatus;
+SELECT DISTINCT h1.Emp_Name, h1.JobRole, h1.MaritalStatus
+FROM hr h1
+INNER JOIN hr h2 ON h1.JobRole = h2.JobRole 
+                AND h1.MaritalStatus = h2.MaritalStatus
+                AND h1.EmployeeID != h2.EmployeeID;
 ```
 17. List the employees with the highest TotalWorkingYears who also have a PerformanceRating of 4. 
 ``` SQL
