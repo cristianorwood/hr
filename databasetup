@@ -1,7 +1,12 @@
+# HR Project - SQL intern Psyliq
+
+This is repository includes my SQL queries for this case study.  Please refer to my [project](cristianorwood.com) for more details on this.
+
 ``` SQL
 CREATE DATABASE general;
 USE general;
-
+```
+``` SQL
 -- Create HR table --
 CREATE TABLE hr (
     Age INT,
@@ -11,11 +16,9 @@ CREATE TABLE hr (
     DistanceFromHome INT,
     Education INT,
     EducationField VARCHAR(255),
-
     EmployeeID INT,
     EmployeeCount INT,
     EmployeeNumber INT,
-
     Emp_Name VARCHAR(255),
     EnvironmentSatisfaction INT,
     Gender VARCHAR(255),
@@ -38,14 +41,16 @@ CREATE TABLE hr (
     YearsSinceLastPromotion INT,
     YearsWithCurrManager INT
 );
-
+```
+``` SQL
 -- Create Manager table --
 CREATE TABLE manager (
     EmployeeID INT,
     JobInvolvement INT,
     PerformanceRating INT
 );
-
+```
+``` SQL
 -- Create Survey table --
 CREATE TABLE survey (
     EmployeeID INT,
@@ -53,33 +58,28 @@ CREATE TABLE survey (
     JobSatisfaction INT,
     WorkLifeBalance INT
 );
-
-
-
-
+```
+``` SQL
 -- Import data into general table --
 LOAD DATA INFILE '/var/lib/mysql-files/hr.csv'
 INTO TABLE hr
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
-
-​
-
+```
+``` SQL
 -- Import data into Manager table --
 LOAD DATA INFILE '/var/lib/mysql-files/manager.csv'
 INTO TABLE manager
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
-
-​
-
+```
+``` SQL
 -- Import data into Survey table --
 LOAD DATA INFILE '/var/lib/mysql-files/survey.csv'
 INTO TABLE survey
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n'
 IGNORE 1 ROWS;
-
 ```
