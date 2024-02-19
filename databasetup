@@ -1,0 +1,85 @@
+``` SQL
+CREATE DATABASE general;
+USE general;
+
+-- Create HR table --
+CREATE TABLE hr (
+    Age INT,
+    Attrition VARCHAR(255),
+    BusinessTravel VARCHAR(255),
+    Department VARCHAR(255),
+    DistanceFromHome INT,
+    Education INT,
+    EducationField VARCHAR(255),
+
+    EmployeeID INT,
+    EmployeeCount INT,
+    EmployeeNumber INT,
+
+    Emp_Name VARCHAR(255),
+    EnvironmentSatisfaction INT,
+    Gender VARCHAR(255),
+    JobInvolvement INT,
+    JobLevel INT,
+    JobRole VARCHAR(255),
+    JobSatisfaction INT,
+    MaritalStatus VARCHAR(255),
+    MonthlyIncome INT,
+    NumCompaniesWorked INT,
+    Over18 VARCHAR(255),
+    PercentSalaryHike INT,
+    PerformanceRating INT,
+    RelationshipSatisfaction INT,
+    StandardHours INT,
+    StockOptionLevel INT,
+    TotalWorkingYears INT,
+    TrainingTimesLastYear INT,
+    YearsAtCompany INT,
+    YearsSinceLastPromotion INT,
+    YearsWithCurrManager INT
+);
+
+-- Create Manager table --
+CREATE TABLE manager (
+    EmployeeID INT,
+    JobInvolvement INT,
+    PerformanceRating INT
+);
+
+-- Create Survey table --
+CREATE TABLE survey (
+    EmployeeID INT,
+    EnvironmentSatisfaction INT,
+    JobSatisfaction INT,
+    WorkLifeBalance INT
+);
+
+
+
+
+-- Import data into general table --
+LOAD DATA INFILE '/var/lib/mysql-files/hr.csv'
+INTO TABLE hr
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+​
+
+-- Import data into Manager table --
+LOAD DATA INFILE '/var/lib/mysql-files/manager.csv'
+INTO TABLE manager
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+​
+
+-- Import data into Survey table --
+LOAD DATA INFILE '/var/lib/mysql-files/survey.csv'
+INTO TABLE survey
+FIELDS TERMINATED BY ','
+LINES TERMINATED BY '\n'
+IGNORE 1 ROWS;
+
+```
